@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpaslan Yenitürk - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #2c3e50;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--primary-color);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            position: fixed;
+            width: 25%;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid white;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 25%;
+            padding: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+/* Ana Stil Güncellemeleri */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #2c3e50;
+    --background: #f8f9fa;
+    --card-radius: 15px;
+    --transition-speed: 0.4s;
+}
+
+/* Deneyim Kartları Geliştirmeleri */
+.experience-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--card-radius);
+    padding: 25px;
+    margin: 0 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: all var(--transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
+    min-width: 320px;
+    max-width: 400px;
+    flex-shrink: 0;
+    cursor: grab;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transition: left 0.8s;
+}
+
+.experience-card:hover::before {
+    left: 100%;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+/* Skill Badge Güncellemeleri */
+.skill-badge {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin: 8px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.skill-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.skill-badge:hover::after {
+    left: 120%;
+}
+
+/* Color Picker Geliştirmeleri */
+.color-picker-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.color-picker {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    backdrop-filter: blur(12px);
+    display: flex;
+    gap: 15px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.color-option {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.color-option:hover {
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Download Button Güncellemeleri */
+.btn-download {
+    background: linear-gradient(45deg, 
+        var(--secondary-color) 0%, 
+        var(--primary-color) 100%);
+    color: white !important;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.btn-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transition: left 0.8s;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.35);
+}
+
+.btn-download:hover::before {
+    left: 100%;
+}
+
+/* Responsive Güncellemeler */
+@media (max-width: 992px) {
+    .color-picker-container {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .color-picker {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .color-option {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        min-width: 85vw;
+        margin: 0 10px;
+        padding: 20px;
+    }
+    
+    .btn-download {
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+    .color-picker-container {
+        bottom: 10px;
+    }
+}
+
+/* Scrollbar İyileştirmeleri */
+.scrollable-cards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scrollable-cards::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, 
+        var(--secondary-color) 0%, 
+        var(--primary-color) 100%);
+    border-radius: 10px;
+    border: 2px solid var(--background);
+}
+
+.scrollable-cards::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    margin: 0 20px;
+}    
+
+.scrollable-cards {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* iOS için smooth scroll */
+    gap: 25px; /* Kartlar arası boşluk */
+}
+
+.experience-card {
+    flex: 0 0 auto; /* Kartların boyutunu sabitler */
+    min-width: 400px; /* Minimum kart genişliği */
+    max-width: 500px; /* Maksimum kart genişliği */
+    scroll-snap-align: start; /* Scroll hizalaması */
+}
+
+/* Scroll snap efekti için */
+.scrollable-cards {
+    scroll-snap-type: x mandatory;
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        min-width: 85vw; /* Mobilde ekran genişliğinin %85'i */
+        max-width: 90vw;
+        scroll-snap-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- Color Picker -->
+<div class="color-picker-container">
+    <div class="color-picker">
+        <button class="color-option" data-color="default" style="background:linear-gradient(45deg, #2c3e50, #3498db)"></button>
+        <button class="color-option" data-color="green" style="background:linear-gradient(45deg, #27ae60, #2ecc71)"></button>
+        <button class="color-option" data-color="purple" style="background:linear-gradient(45deg, #8e44ad, #9b59b6)"></button>
+        <button class="color-option" data-color="sunset" style="background:linear-gradient(45deg, #e74c3c, #f1c40f)"></button>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <img src="https://avatars.githubusercontent.com/u/56562039?s=400&u=d8a5bd16ed5f45bf13410a06507e97d925bf1616&v=4" alt="Alpaslan Yenitürk" class="profile-img">
+    <h2 class="text-center mb-4">Alpaslan Yenitürk</h2>
+    
+    <div class="social-icons text-center mb-4">
+        <a href="mailto:yeniturkalpaslan4@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/alpaslanyeniturk/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/alpaslan-y-2485b01ab/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yeniturkalp"><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="cv.pdf" download class="btn btn-download">
+            <i class="fas fa-file-pdf me-2"></i>CV'mi İndir
+        </a>
+    </div>
+
+    <h4 class="mt-5">Eğitim</h4>
+    <ul class="list-unstyled">
+        <li><strong>Lisans:</strong><br>Bilecik Üniversitesi<br>Moleküler Biyoloji ve Genetik</li>
+        <li class="mt-3"><strong>Yüksek Lisans:</strong><br>Biyoteknoloji (Devam Ediyor)</li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Hakkımda -->
+    <section class="mb-5">
+        <h2 class="section-title">Hakkımda</h2>
+        <p style="font-size: 24px;">Moleküler Biyoloji ve Genetik eğitimim ile başladığım kariyer yolculuğumu yazılım, dijital pazarlama ve interaktif teknolojilere olan ilgimle birleştirdim. Kendi çabamla yazılım dünyasına adım attım ve bugün hem geliştirici hem de tasarımcı olarak projeler üretiyorum.</p>
+    </section>
+
+    <!-- İş Tecrübeleri -->
+<section class="mb-5">
+    <h2 class="section-title">İş Tecrübeleri</h2>
+    <div class="scrollable-cards">
+        <!-- Card 1 -->
+        <div class="experience-card">
+            <div class="card-header">
+                <h4></h4>
+                <span class="timeline">2023-2024</span>
+            </div>
+            <div class="card-body">
+                <div class="position-badge">Web & Yazılım Sorumlusu</div>
+                <ul class="responsibilities">
+                    <li><i class="fas fa-caret-right"></i>Müşteri taleplerini analiz ve uygulama</li>
+                    <li><i class="fas fa-caret-right"></i>Kurumsal & E-ticaret siteleri geliştirme</li>
+                    <li><i class="fas fa-caret-right"></i>Start-up projelerinde teknik liderlik</li>
+                    <li><i class="fas fa-caret-right"></i>Müşteri memnuniyeti odaklı çözümler</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="experience-card">
+            <div class="card-header">
+                <h4></h4>
+                <span class="timeline">2024-Devam Ediyor</span>
+            </div>
+            <div class="card-body">
+                <div class="position-badge">Web & Yazılım Sorumlusu | AR & E-Ticaret Uzmanı</div>
+                <div class="tech-stack">
+                    <span>E-Ticaret</span>
+                    <span>3D Modelleme</span>
+                    <span>AR Çözümleri</span>
+                    <span>Sistem Entegrasyon</span>
+                </div>
+                <ul class="responsibilities">
+                    <li><i class="fas fa-caret-right"></i>360° ürün deneyimi geliştirme</li>
+                    <li><i class="fas fa-caret-right"></i>AR tabanlı sanal deneme sistemleri</li>
+                    <li><i class="fas fa-caret-right"></i>Stok ve ödeme sistem entegrasyonu</li>
+                    <li><i class="fas fa-caret-right"></i>Dijital dönüşüm stratejileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Yetkinlikler -->
+    <section class="mb-5">
+        <h2 class="section-title">Yetkinlikler</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Yazılım ve Teknoloji</h4>
+                <div class="skill-badge">Frontend & Backend Geliştirme</div>
+                <div class="skill-badge">Biyoinformatik</div>
+                <div class="skill-badge">Yapay Zeka ve Mobil Uygulamalar</div>
+				<div class="skill-badge">E-Ticaret & 3D Etkileşimli Web Siteleri</div>
+				<div class="skill-badge">Kurumsal & Özel Web Çözümleri</div>
+				<div class="skill-badge">Wordpress</div>
+            </div>
+            <div class="col-md-6">
+                <h4>Dijital Pazarlama</h4>
+                <div class="skill-badge">Grafik & Video Düzenleme</div>
+                <div class="skill-badge">Sosyal Medya & Reklam Yönetimi</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Tema Yönetimi
+    const themes = {
+        default: {'--primary-color':'#2c3e50','--secondary-color':'#3498db','--text-color':'#2c3e50','--background':'#f8f9fa'},
+        green: {'--primary-color':'#27ae60','--secondary-color':'#2ecc71','--text-color':'#14472a','--background':'#f0fdf4'},
+        purple: {'--primary-color':'#8e44ad','--secondary-color':'#9b59b6','--text-color':'#4a235a','--background':'#f9f0ff'},
+        sunset: {'--primary-color':'#e74c3c','--secondary-color':'#f1c40f','--text-color':'#7b241c','--background':'#fef5e7'}
+    };
+
+    document.querySelectorAll('.color-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = themes[btn.dataset.color];
+            Object.entries(theme).forEach(([prop, val]) => {
+                document.documentElement.style.setProperty(prop, val);
+            });
+            localStorage.setItem('theme', btn.dataset.color);
+        });
+    });
+
+    // Scroll Animasyon
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.experience-card').forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+            if(cardTop < window.innerHeight * 0.8) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Sayfa Yüklendiğinde
+    window.addEventListener('load', () => {
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        document.querySelector(`[data-color="${savedTheme}"]`).click();
+    });
+</script>
+
+</body>
+</html>
